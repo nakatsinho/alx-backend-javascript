@@ -1,30 +1,34 @@
 0x06. Unittests in JS
 =====================
 
-UnitTests Back-end JavaScript ES6 NodeJS ExpressJS Mocha
+UnitTests
+Back-end JavaScript
+ES6
+NodeJS
+ExpressJS
+Mocha
 
--   By: Johann Kerbrat, Engineering Manager at Uber Works
--   Weight: 1
+-   By: Dev Nderitu
 
 
-![image](https://github.com/AsuweRich/alx-backend-javascript/assets/106776383/8797c8a9-aa96-47d1-8feb-1dc95fc605d2)
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/12/90f79a666e174e6c4ffc.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220811%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220811T142140Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=35cd57fe1ccd8bb0653dc29d92823db90bc0f56a1e505bcabdca51c51a4f2ac3)
 
 Resources
 ---------
 
 **Read or watch:**
 
--   [Mocha documentation](https://mochajs.org "Mocha documentation")
--   [Chai](https://www.chaijs.com/api/ "Chai")
--   [Sinon](https://sinonjs.org/releases/v7.5.0/ "Sinon")
--   [Express](https://expressjs.com/en/guide/routing.html "Express")
--   [Request](https://www.npmjs.com/package/request "Request")
--   [How to Test NodeJS Apps using Mocha, Chai and SinonJS](https://www.digitalocean.com/community/tutorials/how-to-test-nodejs-apps-using-mocha-chai-and-sinonjs "How to Test NodeJS Apps using Mocha, Chai and SinonJS")
+-   [Mocha documentation](https://alx-intranet.hbtn.io/rltoken/Gx5mfX41__cc2hwepcl0aA "Mocha documentation")
+-   [Chai](https://alx-intranet.hbtn.io/rltoken/Rs3SrSdr9OxPp-4099A0cg "Chai")
+-   [Sinon](https://alx-intranet.hbtn.io/rltoken/5KsW5N9sG3sGWW3z-jkNwA "Sinon")
+-   [Express](https://alx-intranet.hbtn.io/rltoken/Jq58SNUh8jcZqKoFcuOQdw "Express")
+-   [Request](https://alx-intranet.hbtn.io/rltoken/FcJfzr2jUJSj8Xp3z9L1wg "Request")
+-   [How to Test NodeJS Apps using Mocha, Chai and SinonJS](https://alx-intranet.hbtn.io/rltoken/HwB8gViDosy8znk7H9i4Pw "How to Test NodeJS Apps using Mocha, Chai and SinonJS")
 
 Learning Objectives
 -------------------
 
-At the end of this project, you are expected to be able to [explain to anyone](https://fs.blog/feynman-learning-technique/ "explain to anyone"), **without the help of Google**:
+At the end of this project, you are expected to be able to [explain to anyone](https://alx-intranet.hbtn.io/rltoken/Ge846tiklKJNUSNh60IR7w "explain to anyone"), **without the help of Google**:
 
 -   How to use Mocha to write a test suite
 -   How to use different assertion libraries (Node or Chai)
@@ -92,6 +96,7 @@ mandatory
 > calculateNumber(1.5, 3.7)
 6
 >
+
 ```
 
 **Run test**
@@ -110,6 +115,7 @@ bob@dylan:~$ npm test 0-calcul.test.js
 
   130 passing (35ms)
 bob@dylan:~$
+
 ```
 
 **Repo:**
@@ -119,6 +125,95 @@ bob@dylan:~$
 -   File: `package.json, 0-calcul.js, 0-calcul.test.js`
 
  Done? Help Check your code Get a sandbox
+
+**----------CODE EXPLANATION ----------------**
+
+**package.json**
+```
+{
+    "name": "0x06-unittests_in_js",
+    "version": "1.0.0",
+    "description": "unit tests in js introduction ",
+    "main": "0-calcul.js",
+    "scripts": {
+        "test": "mocha"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dennisnderitu254/alx-backend-javascript"
+    },
+    "keywords": [
+        "unittest",
+        "nodejs",
+        "es6",
+        "express",
+        "mocha"
+    ],
+    "author": "dennisnderitu254",
+    "license": "ISC",
+    "devDependencies": {
+        "chai": "^4.3.6",
+        "eslint": "^8.7.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-mocha": "^10.0.3",
+        "mocha": "^9.2.2",
+        "sinon": "^12.0.1"
+    },
+    "bugs": {
+        "url": "https://github.com/dennisnderitu254/alx-backend-javascript/issues"
+    },
+    "homepage": "https://github.com/dennisnderitu254/alx-backend-javascript#readme"
+}
+```
+
+**0-calcul.js**
+```
+function calculateNumber(a, b){
+    return Math.round(a) + Math.round(b);
+}
+
+module.exports = calculateNumber;
+```
+
+**0-calcul.test.js**
+```
+const assert = require('assert');
+const {it, describe} = require('mocha');
+const calculateNumber = require('./0-calcul')
+
+describe('calculateNumber', () => {
+    it('checking if number round', () => {
+        assert.equal(calculateNumber(1, 3), 4);
+    });
+    it('chacking if numbers round 2nd round', () => {
+        assert.equal(calculateNumber(1, 3.7), 5);
+    });
+    it('checking if numbers round 3rd round', () => {
+        assert.equal(calculateNumber(1.2, 3.7), 5);
+    });
+    it('checking if numbers round 4th round', () => {
+        assert.equal(calculateNumber(1.5, 3.7), 6);
+    });
+    it('chacking negative return', () => {
+        assert.equal(calculateNumber(-1.3, -3.7), -5);
+    });
+});
+```
+
+In this Code implementation, the function `0-calcul.js`, calculates the sun of two numbers, that have been rounded off.
+
+
+- `Mocha` is an open source JavaScript testing framework that runs on Node.js and in the browser. It’s designed for testing both synchronous and asynchronous code with a very simple interface.
+
+- `Mocha` runs tests serially to deliver flexible and accurate reporting while mapping uncaught exceptions to their corresponding test cases. Mocha provides functions that execute in a specific order, logging the results in the terminal window. Mocha also cleans the state of the software being tested to ensure that test cases run independently of each other.
+
+- `Mocha` is commonly used with `Chai`, a popular assertion library for Node.js and the browser
+
+- Writing tests often requires using an `assertion library`. An `assertion` is a feature used to verify that the result from a programming operation matches the expected result. Mocha does not discriminate, regardless of which assertion library you choose to use.
+
+- If you’re using `Mocha` in a Node.js environment, you can use the built-in assert module as your assertion library. However, there are more extensive assertion libraries you can use as well, like `Chai, Expect.js, Should.js`, and more.
+
 
 ### 1\. Combining descriptions
 
@@ -161,6 +256,7 @@ mandatory
 0.2
 > calculateNumber('DIVIDE', 1.4, 0)
 'Error'
+
 ```
 
 **Repo:**
@@ -170,6 +266,61 @@ mandatory
 -   File: `1-calcul.js, 1-calcul.test.js`
 
  Done? Help Check your code Get a sandbox
+
+**-------CODE IMPLIMENTATION----------**
+
+`1-calcul.js`
+
+```
+function calculateNumber(type, a, b) {
+    if (typeof (type) == String || type == 'SUM' || type == 'SUBTRACT' || type == 'DIVIDE') {
+        if (type == 'SUM') {
+            return Math.round(a) + Math.round(b);
+        } else if (type == 'SUBTRACT') {
+            return Math.round(a) - Math.round(b);
+        } else if (type == 'DIVIDE') {
+            if (Math.round(b) != 0) {
+                return Math.round(a) / Math.round(b);
+            }
+            return 'Error';
+        }
+    } else {
+        return 'Error'
+    }
+}
+
+module.exports = calculateNumber;
+```
+
+`1-calcul.test.js`
+
+```
+const assert = require('assert');
+const { it, describe } = require('mocha');
+const calculateNumber = require('./1-calcul');
+
+describe('calculateNumber', () => {
+    it('checking if operation is correct 1', () => {
+        assert.equal(calculateNumber('SUM', 1.4, 4.5), 6);
+    });
+    it('checking if operation is correct 2', () => {
+        assert.equal(calculateNumber('SUBTRACT', 1.4, 4.5), -4);
+    });
+    it('checking if operation is correct 3', () => {
+        assert.equal(calculateNumber('DIVIDE', 1.4, 4.5), 0.2);
+    });
+    it('checking if operation is correct 4', () => {
+        assert.equal(calculateNumber('DIVIDE', 1.4, 0), 'Error');
+    });
+    it('checking correct type for operation 1', () => {
+        assert.equal(calculateNumber(5, 1, 4), 'Error');
+    });
+    it('checking correct type for operation 2', () => {
+        assert.equal(calculateNumber('plus', 1, 4), 'Error');
+    });
+});
+```
+
 
 ### 2\. Basic test using Chai assertion library
 
@@ -200,6 +351,103 @@ While using Node assert library is completely valid, a lot of developers prefer 
 -   File: `2-calcul_chai.js, 2-calcul_chai.test.js`
 
  Done? Help Check your code Get a sandbox
+
+**--------------CODE IMPLIMENTATION-------------**
+
+`2-calcul_chai.js`
+
+```
+function calculateNumber(type, a, b) {
+    if (typeof (type) == String || type == 'SUM' || type == 'SUBTRACT' || type == 'DIVIDE') {
+        if (type == 'SUM') {
+            return Math.round(a) + Math.round(b);
+        } else if (type == 'SUBTRACT') {
+            return Math.round(a) - Math.round(b);
+        } else if (type == 'DIVIDE') {
+            if (Math.round(b) != 0) {
+                return Math.round(a) / Math.round(b);
+            }
+            return 'Error';
+        }
+    } else {
+        return 'Error'
+    }
+}
+
+module.exports = calculateNumber;
+```
+
+`2-calcul_chai.test.js`
+
+```
+const assert = require('assert');
+const { expect } = require('chai');
+const { it, describe, test } = require('mocha');
+const calculateNumber = require('./2-calcul_chai');
+
+describe('calculateNumber', () => {
+    describe('SUM', () => {
+      it('checking if numbers round', () => {
+        expect(calculateNumber('SUM', 1, 3)).to.equal(4);
+      });
+      it('checking if numbers round 2nd round', () => {
+        expect(calculateNumber('SUM', 1, 3.7)).to.equal(5);
+      });
+      it('checking if numbers round 3rd round', () => {
+        expect(calculateNumber('SUM', 1.2, 3.7)).to.equal(5);
+      });
+      it('checking if numbers round 4th round', () => {
+        expect(calculateNumber('SUM', 1.5, 3.7)).to.equal(6);
+      });
+      it('checking if numbers round 5th round', () => {
+        expect(calculateNumber('SUM', 1.4, 4.5)).to.equal(6);
+      });
+      it('checking negative return', () => {
+        expect(calculateNumber('SUM', -1.3, -3.7)).to.equal(-5);
+      });
+    });
+    describe('SUBTRACT', () => {
+      it('checking if numbers round', () => {
+        expect(calculateNumber('SUBTRACT', 1, 3)).to.equal(-2);
+      });
+      it('checking if numbers round 2nd round', () => {
+        expect(calculateNumber('SUBTRACT', 1, 3.7)).to.equal(-3);
+      });
+      it('checking if numbers round 3rd round', () => {
+        expect(calculateNumber('SUBTRACT', 6.2, 3.7)).to.equal(2);
+      });
+      it('checking if numbers round 4th round', () => {
+        expect(calculateNumber('SUBTRACT', 5.5, 3.7)).to.equal(2);
+      });
+      it('checking if numbers round 5th round', () => {
+        expect(calculateNumber('SUBTRACT', 1.4, 4.5)).to.equal(-4);
+      });
+      it('checking negative return', () => {
+        expect(calculateNumber('SUBTRACT', -1.3, -3.7)).to.equal(3);
+      });
+    });
+    describe('DIVIDE', () => {
+      it('checking if numbers round', () => {
+        expect(calculateNumber('DIVIDE', 3, 1)).to.equal(3);
+      });
+      it('checking if numbers round 2nd round', () => {
+        expect(calculateNumber('DIVIDE', 4, 3.7)).to.equal(1);
+      });
+      it('checking if numbers round 3rd round', () => {
+        expect(calculateNumber('DIVIDE', 2.2, 0.7)).to.equal(2);
+      });
+      it('checking if numbers round 4th round', () => {
+        expect(calculateNumber('DIVIDE', 15, 2.7)).to.equal(5);
+      });
+      it('checking if numbers round 5th round', () => {
+        expect(calculateNumber('DIVIDE', 1.4, 4.5)).to.equal(0.2);
+      });
+      it('checking negative return', () => {
+        expect(calculateNumber('DIVIDE', -1.3, 0)).to.equal('Error');
+      });
+    });
+  });
+```
 
 ### 3\. Spies
 
@@ -243,6 +491,66 @@ Spies are a useful wrapper that will execute the wrapped function, and log usefu
 
  Done? Help Check your code Get a sandbox
 
+**---------------CODE IMPLIMENTATION-------------------**
+
+`utils.js`
+
+```
+const Utils = {
+    calculateNumber: function calculateNumber(type, a, b) {
+      if (type === 'SUM') {
+        return Math.round(a) + Math.round(b);
+      }
+      if (type === 'SUBTRACT') {
+        return Math.round(a) - Math.round(b);
+      }
+      if (type === 'DIVIDE') {
+        if (Math.round(b) === 0) {
+          return 'Error';
+        }
+        return Math.round(a) / Math.round(b);
+      }
+      return 0;
+    },
+  };
+
+  module.exports = Utils;
+```
+
+
+`3-payment.js`
+
+```
+const Utils = require('./utils');
+
+function sendPaymentRequestToApi(totalAmount, totalShipping) {
+  console.log(`The total is: ${Utils.calculateNumber('SUM', totalAmount, totalShipping)}`);
+}
+
+module.exports = sendPaymentRequestToApi;
+```
+
+`3-payment.test.js`
+
+```
+const { expect } = require('chai');
+const { it, describe } = require('mocha');
+const sinon = require('sinon');
+
+const Utils = require('./utils.js');
+const sendPaymentRequestToApi = require('./3-payment.js');
+
+describe('', () => {
+  it('checking if numbers round with spies', () => {
+    const checkSoy = sinon.spy(Utils, 'calculateNumber');
+    sendPaymentRequestToApi(1, 3);
+    expect(checkSoy.calledOnce).to.be.true;
+    expect(checkSoy.calledWith('SUM', 1, 3)).to.be.true;
+    checkSoy.restore();
+  });
+});
+```
+
 ### 4\. Stubs
 
 mandatory
@@ -278,6 +586,44 @@ Stubs are similar to spies. Except that you can provide a different implementati
 
  Done? Help Check your code Get a sandbox
 
+**----------------CODE IMPLIMENTATION----------------------**
+
+`4-payment.js`
+
+```
+const Utils = require('./utils');
+
+function sendPaymentRequestToApi(totalAmount, totalShipping) {
+  console.log(`The total is: ${Utils.calculateNumber('SUM', totalAmount, totalShipping)}`);
+}
+
+module.exports = sendPaymentRequestToApi;
+```
+
+`4-payment.test.js`
+
+```
+const { expect } = require('chai');
+const { it, describe } = require('mocha');
+const sinon = require('sinon');
+
+const Utils = require('./utils.js');
+const sendPaymentRequestToApi = require('./4-payment.js');
+
+describe('', () => {
+  const checkSoy = sinon.spy(console, 'log');
+  it('checking if numbers round with spies and stubs', () => {
+    sendPaymentRequestToApi(100, 20);
+    const stubBoy = sinon.stub(Utils, 'calculateNumber');
+    stubBoy.withArgs('SUM', 100, 20).returns(120);
+    expect(checkSoy.calledOnce).to.be.true;
+    expect(console.log('The total is: 120')).to.be.all;
+    checkSoy.restore();
+    stubBoy.restore();
+  });
+});
+```
+
 ### 5\. Hooks
 
 mandatory
@@ -310,6 +656,75 @@ Hooks are useful functions that can be called before execute one or all tests in
 -   File: `5-payment.js, 5-payment.test.js`
 
  Done? Help Check your code Get a sandbox
+
+**------------------CODE IMPLEMENTATION-------------------**
+
+`utils.js`
+
+```
+const Utils = {
+    calculateNumber: function calculateNumber(type, a, b) {
+      if (type === 'SUM') {
+        return Math.round(a) + Math.round(b);
+      }
+      if (type === 'SUBTRACT') {
+        return Math.round(a) - Math.round(b);
+      }
+      if (type === 'DIVIDE') {
+        if (Math.round(b) === 0) {
+          return 'Error';
+        }
+        return Math.round(a) / Math.round(b);
+      }
+      return 0;
+    },
+  };
+
+  module.exports = Utils;
+```
+
+`5-payment.js`
+
+```
+const Utils = require('./utils');
+
+function sendPaymentRequestToApi(totalAmount, totalShipping) {
+  console.log(`The total is: ${Utils.calculateNumber('SUM', totalAmount, totalShipping)}`);
+}
+
+module.exports = sendPaymentRequestToApi;
+```
+
+`5-payment.test.js`
+
+```
+const { expect } = require('chai');
+const { it, describe } = require('mocha');
+const sinon = require('sinon');
+
+const Utils = require('./utils.js');
+const sendPaymentRequestToApi = require('./5-payment.js');
+
+describe('', () => {
+  let spyBoy;
+  beforeEach(() => {
+    spyBoy = sinon.spy(console, 'log');
+  });
+  afterEach(() => {
+    sinon.restore();
+  });
+  it('checking if numbers round with spies and stubs 1st', () => {
+    sendPaymentRequestToApi(100, 20);
+    expect(spyBoy.calledOnce).to.be.true;
+    expect(spyBoy.calledWith('The total is: 120')).to.be.true;
+  });
+  it('checking if numbers round with spies and stubs 2nd', () => {
+    sendPaymentRequestToApi(10, 10);
+    expect(spyBoy.calledOnce).to.be.true;
+    expect(spyBoy.calledWith('The total is: 20')).to.be.true;
+  });
+});
+```
 
 ### 6\. Async tests with done
 
@@ -345,6 +760,51 @@ Look into how to support async testing, for example when waiting for the answer 
 -   File: `6-payment_token.js, 6-payment_token.test.js`
 
  Done? Help Check your code Get a sandbox
+
+**--------------CODE IMPLEMENTATION-----------------**
+
+`6-payment_token.js`
+
+```
+function getPaymentTokenFromAPI (success) {
+    return new Promise(function (resolve) {
+      if (success) {
+        resolve({ data: 'Successful response from the API' });
+      }
+    });
+}
+
+module.exports = getPaymentTokenFromAPI;
+```
+
+`6-payment_token.test.js`
+
+```
+const chai = require('chai');
+const expect = chai.expect;
+
+const getPaymentTokenFromAPI = require('./6-payment_token');
+
+describe('getPaymentTokenFromAPI', () => {
+  it('should return an instance of a Promise', () => {
+    const res = getPaymentTokenFromAPI();
+    expect(res).to.be.an.instanceof(Promise);
+  });
+  it("should return a JSON data object {data: 'Successful response from the API'", () => {
+    getPaymentTokenFromAPI(true)
+      .then((res) => {
+        expect(res.data).to.be.equal('Successful response from the API');
+        done();
+      });
+  });
+  it('should do nothing when not success', () => {
+    getPaymentTokenFromAPI(false)
+      .then((res) => {
+        expect(res).to.equal('');
+      });
+  });
+});
+```
 
 ### 7\. Skip
 
@@ -390,6 +850,7 @@ describe('Testing numbers', () => {
     expect(7 === 7).to.be.true;
   });
 });
+
 ```
 
 **Using the file `7-skip.test.js`:**
@@ -413,6 +874,48 @@ describe('Testing numbers', () => {
 -   File: `7-skip.test.js`
 
  Done? Help Check your code Get a sandbox
+
+**---------------CODE IMPLEMENTATION--------------------**
+
+`7-skip.test.js`
+
+```
+const { expect } = require('chai');
+
+describe('Testing numbers', () => {
+  it('1 is equal to 1', () => {
+    expect(1 === 1).to.be.true;
+  });
+
+  it('2 is equal to 2', () => {
+    expect(2 === 2).to.be.true;
+  });
+
+  it.skip('1 is equal to 3', () => {
+    expect(1 === 3).to.be.true;
+  });
+
+  it('3 is equal to 3', () => {
+    expect(3 === 3).to.be.true;
+  });
+
+  it('4 is equal to 4', () => {
+    expect(4 === 4).to.be.true;
+  });
+
+  it('5 is equal to 5', () => {
+    expect(5 === 5).to.be.true;
+  });
+
+  it('6 is equal to 6', () => {
+    expect(6 === 6).to.be.true;
+  });
+
+  it('7 is equal to 7', () => {
+    expect(7 === 7).to.be.true;
+  });
+});
+```
 
 ### 8\. Basic Integration testing
 
@@ -441,6 +944,7 @@ In a folder `8-api` located at the root of the project directory, copy this `
     "sinon": "^7.5.0"
   }
 }
+
 ```
 
 **Create a new file `api.js`:**
@@ -463,6 +967,7 @@ Terminal 1
 ```
 bob@dylan:~/8-api$  node api.js
 API available on localhost port 7865
+
 ```
 
 Terminal 2
@@ -484,6 +989,7 @@ bob@dylan:~/8-api$ npm test api.test.js
   23 passing (256ms)
 
 bob@dylan:~/8-api$
+
 ```
 
 **Tips:**
@@ -530,6 +1036,7 @@ Terminal 1
 ```
 bob@dylan:~$ node api.js
 API available on localhost port 7865
+
 ```
 
 Terminal 2
@@ -568,6 +1075,7 @@ bob@dylan:~$ curl http://localhost:7865/cart/hello -v
 </html>
 * Connection #0 to host localhost left intact
 bob@dylan:~$
+
 ```
 
 **Tips:**
@@ -604,6 +1112,7 @@ In a folder `10-api`, reusing the previous project in `9-api` (`package.json`
     paypal: false
   }
 }
+
 ```
 
 -   Add an endpoint `POST /login` that returns the message `Welcome :username` where `:username` is the value of the body variable `userName`.
@@ -620,6 +1129,7 @@ Terminal 1
 ```
 bob@dylan:~$ node api.js
 API available on localhost port 7865
+
 ```
 
 Terminal 2
@@ -631,6 +1141,7 @@ bob@dylan:~$
 bob@dylan:~$ curl -XPOST http://localhost:7865/login -d '{ "userName": "Betty" }' -H 'Content-Type: application/json' ; echo ""
 Welcome Betty
 bob@dylan:~$
+
 ```
 
 **Tips:**

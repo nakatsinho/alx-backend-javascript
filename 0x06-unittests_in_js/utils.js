@@ -15,6 +15,5 @@ const Utils = {
       return 0;
     },
   };
-  
+
   module.exports = Utils;
-  
