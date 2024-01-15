@@ -3,32 +3,31 @@
 
 Back-end JavaScript ES6 NodeJS ExpressJS
 
--   By: Johann Kerbrat, Engineering Manager at Uber Works
--   Weight: 1
+-   By: Dev Nderitu
 
-![image](https://github.com/AsuweRich/alx-backend-javascript/assets/106776383/eb2a82fc-7da6-42b6-b5fc-0e79c1b9022c)
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/1/82692897e15d9f03256f.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220809%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220809T195501Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=43b4a8b5bdaf5cb33711d5acc543430bc22f2a0a5354406c81d145a57b6abe44)
 
 Resources
 ---------
 
 **Read or watch**:
 
--   [Node JS getting started](htthttps://nodejs.org/en/docs/guides/getting-started-guide "Node JS getting started")
--   [Process API doc](https://node.readthedocs.io/en/latest/api/process/ "Process API doc")
--   [Child process](https://nodejs.org/api/child_process.html "Child process")
--   [Express getting started](https://expressjs.com/en/starter/installing.html "Express getting started")
--   [Mocha documentation](https://mochajs.org/ "Mocha documentation")
--   [Nodemon documentation](https://github.com/remy/nodemon#nodemon "Nodemon documentation")
+-   [Node JS getting started](https://alx-intranet.hbtn.io/rltoken/zIYhQPHfn37Hlk3I9gfPGw "Node JS getting started")
+-   [Process API doc](https://alx-intranet.hbtn.io/rltoken/Wt69QV2xygB4GEqob26AjQ "Process API doc")
+-   [Child process](https://alx-intranet.hbtn.io/rltoken/IS4y9rRCblX71W_oeXpymw "Child process")
+-   [Express getting started](https://alx-intranet.hbtn.io/rltoken/XsfrhG9NRLuuaTpVZlZv_g "Express getting started")
+-   [Mocha documentation](https://alx-intranet.hbtn.io/rltoken/EBGDj1FwLrK_y4kgxp8hfg "Mocha documentation")
+-   [Nodemon documentation](https://alx-intranet.hbtn.io/rltoken/vnDSbLsicMDdxcf5YUSXIg "Nodemon documentation")
 
 Learning Objectives
 -------------------
 
-At the end of this project, you are expected to be able to [explain to anyone](https://fs.blog/feynman-learning-technique/ "explain to anyone"), **without the help of Google**:
+At the end of this project, you are expected to be able to [explain to anyone](https://alx-intranet.hbtn.io/rltoken/vXmxtc5JH_CeIWReMTNhDA "explain to anyone"), **without the help of Google**:
 
 -   run javascript using NodeJS
 -   use NodeJS modules
 -   use specific Node JS module to read files
--   use `process` to access command line arguments and the environment
+-   use `process` to access command line arguments and the environment
 -   create a small HTTP server using Node JS
 -   create a small HTTP server using Express JS
 -   create advanced routes with Express JS
@@ -38,15 +37,15 @@ At the end of this project, you are expected to be able to [explain to anyone](
 Requirements
 ------------
 
--   Allowed editors: `vi`, `vim`, `emacs`, `Visual Studio Code`
--   All your files will be interpreted/compiled on Ubuntu 18.04 LTS using `node` (version 12.x.x)
+-   Allowed editors: `vi`, `vim`, `emacs`, `Visual Studio Code`
+-   All your files will be interpreted/compiled on Ubuntu 18.04 LTS using `node` (version 12.x.x)
 -   All your files should end with a new line
--   A `README.md` file, at the root of the folder of the project, is mandatory
--   Your code should use the `js` extension
--   Your code will be tested using `Jest` and the command `npm run test`
+-   A `README.md` file, at the root of the folder of the project, is mandatory
+-   Your code should use the `js` extension
+-   Your code will be tested using `Jest` and the command `npm run test`
 -   Your code will be verified against lint using ESLint
--   Your code needs to pass all the tests and lint. You can verify the entire project running `npm run full-test`
--   All of your functions/classes must be exported by using this format: `module.exports = myFunction;`
+-   Your code needs to pass all the tests and lint. You can verify the entire project running `npm run full-test`
+-   All of your functions/classes must be exported by using this format: `module.exports = myFunction;`
 
 Provided files
 --------------
@@ -65,11 +64,13 @@ Joseph,Crisou,34,SWE
 Paul,Schneider,60,SWE
 Tommy,Schoul,32,SWE
 Katie,Shirou,21,CS
+
 ```
 
 ### `package.json`
 
 Click to show/hide file contents
+
 ```
 {
   "name": "node_js_basics",
@@ -107,6 +108,7 @@ Click to show/hide file contents
 ### `babel.config.js`
 
 Click to show/hide file contents
+
 ```
 module.exports = {
   presets: [
@@ -125,6 +127,7 @@ module.exports = {
 ### `.eslintrc.js`
 
 Click to show/hide file contents
+
 ```
 module.exports = {
   env: {
@@ -164,10 +167,64 @@ module.exports = {
   ]
 };
 ```
-
 ### and...
 
-Don't forget to run `$ npm install` when you have the `package.json`
+Don't forget to run `$ npm install` when you have the `package.json`
+
+```
+In Node.js, synchronous and asynchronous are two different ways of executing code
+that involve handling tasks that may take time to complete,
+such as reading files, making network requests, or performing database operations.
+The key difference between them lies in how they handle blocking and non-blocking behavior:
+
+Synchronous Execution:
+
+In synchronous code execution:
+Each operation is executed one after the other in a sequential manner.
+When an operation is encountered that takes time to complete (e.g., reading a file),
+the entire program is blocked and waits for that operation to finish before moving on to the next line of code.
+Synchronous code can lead to reduced responsiveness,
+as the program is blocked and cannot perform other tasks during the waiting period.
+Asynchronous Execution:
+
+In asynchronous code execution:
+Tasks that take time to complete are initiated,
+and the program continues executing without waiting for the task to finish.
+When the task is completed, a callback function or a promise is used to handle the result.
+Asynchronous code allows the program to remain responsive and continue executing other
+tasks while waiting for slow operations to complete.
+Asynchronous code is suitable for tasks that may take an unpredictable amount of time,
+such as I/O operations and network requests.
+
+
+------Synchronous Example:-----
+
+const fs = require('fs');
+
+try {
+  const data = fs.readFileSync('file.txt', 'utf8');
+  console.log(data);
+} catch (error) {
+  console.error(error.message);
+}
+
+console.log('After reading file');
+
+------Asynchronous Example:----
+
+const fs = require('fs');
+
+fs.readFile('file.txt', 'utf8', (error, data) => {
+  if (error) {
+    console.error(error.message);
+  } else {
+    console.log(data);
+  }
+});
+
+console.log('After initiating asynchronous read');
+
+```
 
 Tasks
 -----
@@ -176,7 +233,7 @@ Tasks
 
 mandatory
 
-In the file `0-console.js`, create a function named `displayMessage` that prints in `STDOUT` the string argument.
+In the file `0-console.js`, create a function named `displayMessage` that prints in `STDOUT` the string argument.
 
 ```
 bob@dylan:~$ cat 0-main.js
@@ -187,26 +244,27 @@ displayMessage("Hello NodeJS!");
 bob@dylan:~$ node 0-main.js
 Hello NodeJS!
 bob@dylan:~$
+
 ```
 
 **Repo:**
 
--   GitHub repository: `alx-backend-javascript`
--   Directory: `0x05-Node_JS_basic`
--   File: `0-console.js`
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x05-Node_JS_basic`
+-   File: `0-console.js`
 
- Done? Help Check your code Get a sandbox
+ Done? Help Check your code Get a sandbox
 
 ### 1\. Using Process stdin
 
 mandatory
 
-Create a program named `1-stdin.js` that will be executed through command line:
+Create a program named `1-stdin.js` that will be executed through command line:
 
--   It should display the message `Welcome to Holberton School, what is your name?` (followed by a new line)
+-   It should display the message `Welcome to Holberton School, what is your name?` (followed by a new line)
 -   The user should be able to input their name on a new line
--   The program should display `Your name is: INPUT`
--   When the user ends the program, it should display `This important software is now closing` (followed by a new line)
+-   The program should display `Your name is: INPUT`
+-   When the user ends the program, it should display `This important software is now closing` (followed by a new line)
 
 **Requirements:**
 
@@ -223,27 +281,60 @@ Welcome to Holberton School, what is your name?
 Your name is: John
 This important software is now closing
 bob@dylan:~$
+
 ```
 
 **Repo:**
 
--   GitHub repository: `alx-backend-javascript`
--   Directory: `0x05-Node_JS_basic`
--   File: `1-stdin.js`
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x05-Node_JS_basic`
+-   File: `1-stdin.js`
 
- Done? Help Check your code Get a sandbox
+Done? Help Check your code Get a sandbox
+
+```
+CODE EXPLANATION
+
+This code presents a simple interaction with the user in the command line using the process.stdin and process.stdout streams.
+
+1. process.stdout.write('Welcome to Holberton School, what is your name?\n');
+This line writes the given text to the standard output (console), prompting the user to input their name.
+
+2. process.stdin.on('readable', () => { ... });
+This part sets up an event listener for the readable event on the standard input (process.stdin). This event fires when there is data available to be read from the input stream.
+
+3. Inside the event listener:
+
+a. const chunk = process.stdin.read();
+This line reads the data that is available to be read from the standard input stream.
+
+b. if (chunk !== null) { ... }
+This condition checks if data (chunk) has been read. If it's not null, the following code block executes.
+
+c. process.stdout.write(Your name is: ${chunk});
+This line writes the user's input (the read data) along with the message "Your name is: " to the standard output.
+
+4. process.stdin.on('end', () => { ... });
+
+This part sets up an event listener for the end event on the standard input stream. This event fires when there is no more data to be read from the input stream.
+
+5. Inside the end event listener:
+process.stdout.write('This important software is now closing\n');
+
+This line writes a closing message to the standard output, indicating that the program is closing.
+```
 
 ### 2\. Reading a file synchronously with Node JS
 
 mandatory
 
-Using the database `database.csv` (provided in project description), create a function `countStudents` in the file `2-read_file.js`
+Using the database `database.csv` (provided in project description), create a function `countStudents` in the file `2-read_file.js`
 
--   Create a function named `countStudents`. It should accept a path in argument
+-   Create a function named `countStudents`. It should accept a path in argument
 -   The script should attempt to read the database file synchronously
--   If the database is not available, it should throw an error with the text `Cannot load the database`
--   If the database is available, it should log the following message to the console `Number of students: NUMBER_OF_STUDENTS`
--   It should log the number of students in each field, and the list with the following format: `Number of students in FIELD: 6. List: LIST_OF_FIRSTNAMES`
+-   If the database is not available, it should throw an error with the text `Cannot load the database`
+-   If the database is available, it should log the following message to the console `Number of students: NUMBER_OF_STUDENTS`
+-   It should log the number of students in each field, and the list with the following format: `Number of students in FIELD: 6. List: LIST_OF_FIRSTNAMES`
 -   CSV file can contain empty lines (at the end) - and they are not a valid student!
 
 ```
@@ -270,28 +361,55 @@ Number of students: 10
 Number of students in CS: 6. List: Johann, Arielle, Jonathan, Emmanuel, Guillaume, Katie
 Number of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy
 bob@dylan:~$
+
 ```
 
 **Repo:**
 
--   GitHub repository: `alx-backend-javascript`
--   Directory: `0x05-Node_JS_basic`
--   File: `2-read_file.js`
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x05-Node_JS_basic`
+-   File: `2-read_file.js`
 
- Done? Help Check your code Get a sandbox
+```
+CODE EXPLANATION
+
+1. Read the content of the CSV file specified by the path parameter using fs.readFileSync.
+
+2. Split the content into lines using data.split('\n') and then split each line intoindividual data elements using , as the delimiter. The result is stored in the result array.
+
+3. Remove the header line (containing column names) using result.shift().
+
+4. Create a new array named newis that contains only the first and fourth elements from each sub-array in result,
+which corresponds to the first name and field of study.
+
+5.Create a Set named fields to store unique field of study values.
+6.Iterate through the newis array to populate the fields set with unique field values.
+
+7. Create an empty object named final to store the final count of students in each field of study.
+
+8. Iterate through the unique field values in the fields set. For each field, initialize the count to 0 in the final object.
+
+9. Iterate through the newis array and increment the count for each field of study in the final object.
+
+10. Print the total number of students in the dataset by filtering out rows with fewer than 4 elements (presumably excluding incomplete or erroneous data).
+
+11. For each field of study in the final object, print the number of students, list their names, and the field they belong to.
+```
+
+ Done? Help Check your code Get a sandbox
 
 ### 3\. Reading a file asynchronously with Node JS
 
 mandatory
 
-Using the database `database.csv` (provided in project description), create a function `countStudents` in the file `3-read_file_async.js`
+Using the database `database.csv` (provided in project description), create a function `countStudents` in the file `3-read_file_async.js`
 
--   Create a function named `countStudents`. It should accept a path in argument (same as in `2-read_file.js`)
+-   Create a function named `countStudents`. It should accept a path in argument (same as in `2-read_file.js`)
 -   The script should attempt to read the database file asynchronously
 -   The function should return a Promise
--   If the database is not available, it should throw an error with the text `Cannot load the database`
--   If the database is available, it should log the following message to the console `Number of students: NUMBER_OF_STUDENTS`
--   It should log the number of students in each field, and the list with the following format: `Number of students in FIELD: 6. List: LIST_OF_FIRSTNAMES`
+-   If the database is not available, it should throw an error with the text `Cannot load the database`
+-   If the database is available, it should log the following message to the console `Number of students: NUMBER_OF_STUDENTS`
+-   It should log the number of students in each field, and the list with the following format: `Number of students in FIELD: 6. List: LIST_OF_FIRSTNAMES`
 -   CSV file can contain empty lines (at the end) - and they are not a valid student!
 
 ```
@@ -329,6 +447,7 @@ Number of students in CS: 6. List: Johann, Arielle, Jonathan, Emmanuel, Guillaum
 Number of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy
 Done!
 bob@dylan:~$
+
 ```
 
 **Tips:**
@@ -337,27 +456,89 @@ bob@dylan:~$
 
 **Repo:**
 
--   GitHub repository: `alx-backend-javascript`
--   Directory: `0x05-Node_JS_basic`
--   File: `3-read_file_async.js`
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x05-Node_JS_basic`
+-   File: `3-read_file_async.js`
 
- Done? Help Check your code Get a sandbox
+ Done? Help Check your code Get a sandbox
+
+```
+CODE EXPLANATION
+
+1. The function now uses the async keyword to indicate that it's an asynchronous function.
+
+2. Inside the function, you check if the file exists using fs.existsSync(path).
+If the file does exist, you return a promise.
+
+3. Within the promise, you use fs.readFile to read the file asynchronously.
+The callback function passed to fs.readFile handles the file reading process.
+
+4.Inside the callback function:
+
+  a. If there's an error (err) while reading the file, an error is thrown with the message 'Cannot load the database'.
+
+  b. If the file is read successfully, you proceed with processing the data similar to the previous version.
+
+5. The final processed data and results are logged to the console, just like in the previous version.
+
+6. You're using the resolve function to fulfill the promise. You are passing result, final, and newis as arguments to resolve, but this usage is a bit unusual. Usually, promises return a single value.
+
+7. The entire function is encapsulated in a promise and returns this promise.
+
+```
+
+```
+PROMISES IN JAVASCRIPT
+
+A Promise in JavaScript is an asynchronous programming concept that represents a value that might be available now,
+or in the future, or never.
+Promises provide a clean way to handle asynchronous operations such as reading files,
+making network requests, and other time-consuming tasks without blocking the main execution thread.
+Promises improve the readability and maintainability of asynchronous code by providing a structured way to handle success and failure cases.
+
+Promises have three possible states:
+
+1. Pending: The initial state. The promise is neither fulfilled nor rejected.
+
+2. Fulfilled (Resolved): The state when the asynchronous operation is completed successfully. In this state, the promise has a value associated with it.
+
+3. Rejected: The state when the asynchronous operation fails. In this state, the promise has a reason (error) associated with it.
+
+------ How Promises Work Step By Step -----
+
+1. You create a new Promise instance, providing a function with two arguments: resolve and reject.
+Inside this function, you perform your asynchronous operation, and when it's done,
+you call either resolve(result) to fulfill the promise or reject(error) to reject it.
+
+2. You attach callbacks using the .then() method to handle the successful resolution of the promise.
+The callback inside .then() will be executed with the resolved value as an argument.
+
+3. You can also attach a .catch() method to handle errors. If the promise is rejected,
+the callback inside .catch() will be executed with the error as an argument.
+
+Promises help to manage the flow of asynchronous code, making it more readable and maintainable.
+However, they can become quite nested when dealing with multiple asynchronous operations.
+To mitigate this, modern JavaScript includes the concept of async/await,
+which provides a more synchronous-like syntax for working with asynchronous operations and promises.
+
+```
 
 ### 4\. Create a small HTTP server using Node's HTTP module
 
 mandatory
 
-In a file named `4-http.js`, create a small HTTP server using the `http` module:
+In a file named `4-http.js`, create a small HTTP server using the `http` module:
 
--   It should be assigned to the variable `app` and this one must be exported
+-   It should be assigned to the variable `app` and this one must be exported
 -   HTTP server should listen on port 1245
--   Displays `Hello Holberton School!` in the page body for any endpoint as plain text
+-   Displays `Hello Holberton School!` in the page body for any endpoint as plain text
 
 In terminal 1:
 
 ```
 bob@dylan:~$ node 4-http.js
 ...
+
 ```
 
 In terminal 2:
@@ -369,27 +550,69 @@ bob@dylan:~$
 bob@dylan:~$ curl localhost:1245/any_endpoint && echo ""
 Hello Holberton School!
 bob@dylan:~$
+
 ```
 
 **Repo:**
 
--   GitHub repository: `alx-backend-javascript`
--   Directory: `0x05-Node_JS_basic`
--   File: `4-http.js`
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x05-Node_JS_basic`
+-   File: `4-http.js`
 
- Done? Help Check your code Get a sandbox
+ Done? Help Check your code Get a sandbox
+
+
+**---------- CODE EXPLANATION --------------**
+
+1. `const http = require('http');`
+
+- This line imports the built-in http module, which allows you to create HTTP servers and handle HTTP requests and responses.
+
+2. `const hostname = 'localhost';`
+
+- This sets the hostname to 'localhost', which means the server will bind to the local machine.
+
+3. `const port = 1245;`
+
+- This sets the port number to 1245 that the server will listen on.
+
+4. `const app = http.createServer((req, res) => { ... });`
+
+- This line creates an HTTP server using the `createServer` method of the `http` module. The callback function `(req, res) => { ... }` is called whenever a request is made to the server.
+
+5. Inside the request handler callback function:
+- a. `res.statusCode = 200;`
+Sets the HTTP status code of the response to 200 (OK).
+
+- b. `res.setHeader('Content-Type', 'text/plain');`
+Sets the Content-Type header of the response to 'text/plain', indicating that the response will contain plain text.
+
+- c. `res.end('Hello Holberton School!');`
+Writes the provided text as the response body and closes the response stream.
+
+6. `app.listen(port, hostname, () => { ... });`
+
+- This line starts the server and makes it listen for incoming requests on the specified `port` and `hostname`. The callback function is executed when the server starts listening.
+
+7. Inside the server start callback:
+
+- Logs a message indicating that the server is running, including the URL.
+
+8. `module.exports = app;`
+
+- Exports the `app` (HTTP server) instance so that it can be used or tested in other parts of your code.
 
 ### 5\. Create a more complex HTTP server using Node's HTTP module
 
 mandatory
 
-In a file named `5-http.js`, create a small HTTP server using the `http` module:
+In a file named `5-http.js`, create a small HTTP server using the `http` module:
 
 -   It should be assigned to the variable app and this one must be exported
 -   HTTP server should listen on port 1245
 -   It should return plain text
--   When the URL path is `/`, it should display `Hello Holberton School!` in the page body
--   When the URL path is `/students`, it should display `This is the list of our students` followed by the same content as the file `3-read_file_async.js` (with and without the database) - the name of the database must be passed as argument of the file
+-   When the URL path is `/`, it should display `Hello Holberton School!` in the page body
+-   When the URL path is `/students`, it should display `This is the list of our students` followed by the same content as the file `3-read_file_async.js` (with and without the database) - the name of the database must be passed as argument of the file
 -   CSV file can contain empty lines (at the end) - and they are not a valid student!
 
 Terminal 1:
@@ -397,6 +620,7 @@ Terminal 1:
 ```
 bob@dylan:~$ node 5-http.js database.csv
 ...
+
 ```
 
 In terminal 2:
@@ -411,31 +635,51 @@ Number of students: 10
 Number of students in CS: 6. List: Johann, Arielle, Jonathan, Emmanuel, Guillaume, Katie
 Number of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy
 bob@dylan:~$
+
 ```
 
 **Repo:**
 
--   GitHub repository: `alx-backend-javascript`
--   Directory: `0x05-Node_JS_basic`
--   File: `5-http.js`
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x05-Node_JS_basic`
+-   File: `5-http.js`
 
- Done? Help Check your code Get a sandbox
+ Done? Help Check your code Get a sandbox
+
+
+**----------CODE EXPLANATION -------------**
+
+1. The `countStudents` function now accepts an additional parameter `stream`, which represents the response stream. This parameter allows you to write the results directly to the HTTP response.
+
+2. Inside the `countStudents` function, you've made some modifications to the way you write the results to the `stream`. The results are written directly to the response stream using `stream.write()`.
+
+3. Inside the HTTP server callback function `(req, res) => { ... }:`
+a. If the URL is `'/'`, it responds with the message "Hello Holberton School!".
+b. If the URL is `'/students'`, it responds with "This is the list of our students" and then calls the `countStudents` function to process the CSV file and write the results to the response stream. If an error occurs during processing, the error message is written to the response.
+
+4. The server listens on the specified port and hostname using `app.listen(port, hostname);`
+
+5. The `module.exports = app;` statement at the end exports the `app` instance so that it can be used or tested in other parts of your code.
+
+
+- This updated version of the code continues to demonstrate creating an HTTP server, but now it has different behavior for different URLs. When accessing the root URL `'/'`, it provides a simple greeting message. When accessing the `'/students'` URL, it processes the CSV file and provides information about the students and their fields of study.
 
 ### 6\. Create a small HTTP server using Express
 
 mandatory
 
-Install Express and in a file named `6-http_express.js`, create a small HTTP server using Express module:
+Install Express and in a file named `6-http_express.js`, create a small HTTP server using Express module:
 
--   It should be assigned to the variable `app` and this one must be exported
+-   It should be assigned to the variable `app` and this one must be exported
 -   HTTP server should listen on port 1245
--   Displays `Hello Holberton School!` in the page body for the endpoint `/`
+-   Displays `Hello Holberton School!` in the page body for the endpoint `/`
 
 In terminal 1:
 
 ```
 bob@dylan:~$ node 6-http_express.js
 ...
+
 ```
 
 In terminal 2:
@@ -456,138 +700,201 @@ bob@dylan:~$ curl localhost:1245/any_endpoint && echo ""
 </body>
 </html>
 bob@dylan:~$
+
 ```
 
 **Repo:**
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x05-Node_JS_basic`
+-   File: `6-http_express.js`
 
--   GitHub repository: `alx-backend-javascript`
--   Directory: `0x05-Node_JS_basic`
--   File: `6-http_express.js`
+ Done? Help Check your code Get a sandbox
 
- Done? Help Check your code Get a sandbox
+**------------CODE EXPLANATION ----------------**
+
+- Express.js is a popular web application framework for Node.js that simplifies the process of creating APIs and handling HTTP requests and responses.
+
+
+1. `const express = require('express');`
+
+- This line imports the express module, which provides the functionality to create a web server and handle HTTP requests.
+
+2. `const app = express();`
+
+- This creates an instance of the Express application.
+
+3. `app.get('/', (req, res) => { ... });`
+
+- This defines a route for the root URL `'/'`using the HTTP GET method.
+- When a GET request is made to the root URL, the callback function `(req, res) => { ... }` is executed.
+- Inside the callback function, `res.send('Hello Holberton School!');` sends the specified text as the response body.
+
+4. `app.listen(1245);`
+
+- This starts the Express application and makes it listen on port 1245 for incoming HTTP requests.
+
+5. `module.exports = app;`
+
+- This exports the app instance so that it can be used or tested in other parts of your code.
+
+- This code creates a basic Express web server that responds with the message "Hello Holberton School!" when accessed through the root URL. It demonstrates the simplicity of creating routes and handling responses using Express.js.
 
 ### 7\. Create a more complex HTTP server using Express
 
 mandatory
 
-In a file named `7-http_express.js`, recreate the small HTTP server using `Express`:
+In a file named `7-http_express.js`, recreate the small HTTP server using `Express`:
 
--   It should be assigned to the variable app and this one must be exported
--   HTTP server should listen on port 1245
--   It should return plain text
--   When the URL path is `/`, it should display `Hello Holberton School!` in the page body
--   When the URL path is `/students`, it should display `This is the list of our students` followed by the same content as the file `3-read_file_async.js` (with and without the database) - the name of the database must be passed as argument of the file
--   CSV file can contain empty lines (at the end) - and they are not a valid student!
+- It should be assigned to the variable app and this one must be exported
+- HTTP server should listen on port 1245
+- It should return plain text
+- When the URL path is /, it should display `Hello Holberton School!` in the  page body
+- When the URL path is /students, it should display `This is the list of our students` followed by the same content as the file `3-read_file_async.js` (with and without the database) - the name of the database must be passed as argument of the file
+- CSV file can contain empty lines (at the end) - and they are not a valid student!
 
 Terminal 1:
+
 ```
 bob@dylan:~$ node 7-http_express.js database.csv
 ...
 ```
-In terminal 2:
+
+Terminal 2:
+
 ```
 bob@dylan:~$ curl localhost:1245 && echo ""
 Hello Holberton School!
-bob@dylan:~$ 
+bob@dylan:~$
 bob@dylan:~$ curl localhost:1245/students && echo ""
 This is the list of our students
 Number of students: 10
 Number of students in CS: 6. List: Johann, Arielle, Jonathan, Emmanuel, Guillaume, Katie
 Number of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy
-bob@dylan:~$ 
+bob@dylan:~$
 ```
 
 **Repo:**
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x05-Node_JS_basic`
+-   File: `7-http_express.js`
 
--   GitHub repository: `alx-backend-javascript`
--   Directory: `0x05-Node_JS_basic`
--   File: `7-http_express.js`
+**----------CODE EXPLANATION-------------**
 
- Done? Help Check your code Get a sandbox
+1. `const express = require('express');`
 
----
-### 8\. Organize a complex HTTP server using Express
+- Import the express module to use the Express framework.
 
-mandatory
+
+2. `const { argv } = require('process');`
+
+- Import the argv object from the process module to access command-line arguments.
+
+3. `const fs = require('fs');`
+
+- Import the fs module to work with the file system and read the CSV file.
+
+4. Create an instance of the Express application using `const app = express();`.
+
+5. Define a route for the root URL `'/'`  using `app.get('/', (req, res) => { ... });`:
+
+- Set the `Content-Type` header to `'text/plain'`.
+- Send the response body with the message "Hello Holberton School!".
+
+6. Define a route for the `'/students'` URL using `app.get('/students', (req, res) => { ... });`:
+
+- Set the `Content-Type` header to `'text/plain'`.
+- Write the introductory message to the response.
+- Use `fs.readFile` to asynchronously read the CSV file specified in the command-line arguments (`argv[2]`).
+- Inside the file reading callback, process the data similar to the previous versions.
+- Write the calculated results to the response.
+- End the response with `res.end()`.
+
+7. Start the Express application by calling `app.listen(1245);`.
+8. Export the app instance using `module.exports = app`;
+
+- This code demonstrates using Express to handle HTTP requests for specific routes (`'/'` and `'/students'`). It reads the CSV file specified as a command-line argument, processes the data, and sends the results as a response to the `/students` route.
+
+### 8. Organize a complex HTTP server using Express
 
 Obviously writing every part of a server within a single file is not sustainable. Let’s create a full server in a directory named `full_server`.
 
 Since you have used ES6 and Babel in the past projects, let’s use `babel-node` to allow to use ES6 functions like `import` or `export`.
 
-### 8.1 Organize the structure of the server
--   Create 2 directories within:
-    -   `controllers`
-    -   `routes`
--   Create a file `full_server/utils.js`, in the file create a function named `readDatabase` that accepts a file path as argument:
-    -   It should read the database asynchronously
-    -   It should return a promise
-    -   When the file is not accessible, it should reject the promise with the error
-    -   When the file can be read, it should return an object of arrays of the firstname of students per fields
+**8.1 Organize the structure of the server**
 
-### 8.2 Write the App controller
+- Create 2 directories within:
+    - `controllers`
+    - `routes`
+- Create a file `full_server/utils.js` in the file create a function named `readDatabase` that accepts a file path as argument:
+
+- It should read the database asynchronously
+- It should return a promise
+- When the file is not accessible, it should reject the promise with the error
+- When the file can be read, it should return an object of arrays of the firstname of students per fields
+
+**8.2 Write the App controller**
 Inside the file `full_server/controllers/AppController.js`:
 
--   Create a class named `AppController`. Add a static method named `getHomepage`
--   The method accepts `request` and `response` as argument. It returns a 200 status and the message `Hello Holberton School!`
+- Create a class named `AppController`. Add a static method named `getHomepage`
+- The method accepts `request` and `response` as argument. It returns a 200 status and the message `Hello Holberton School!`
 
-### 8.3 Write the Students controller
-Inside the `file full_server/controllers/StudentsController.js`, create a class named `StudentsController`. Add two static methods:
+**8.3 Write the Students controller**
+
+Inside the file `full_server/controllers/StudentsController.js`, create a class named `StudentsController`. Add two static methods:
 
 The first one is `getAllStudents`:
 
--   The method accepts `request` and `response` as argument
--   It should return a status 200
--   It calls the function `readDatabase` from the `utils` file, and display in the page:
-    -   First line: `This is the list of our students`
-    -   And for each field (order by alphabetic order case insensitive), a line that displays the number of students in the field, and the list of first names (ordered by appearance in the database file) with the following format: `Number of students in FIELD: 6. List: LIST_OF_FIRSTNAMES`
--   If the database is not available, it should return a status 500 and the error message `Cannot load the database`
+- The method accepts `request` and `response` as argument
+- It should return a status 200
+- It calls the function `readDatabase` from the `utils` file, and display in the page:
+    - First line: `This is the list of our students`
+    - And for each field (order by alphabetic order case insensitive), a line that displays the number of students in the field, and the list of first names (ordered by appearance in the database file) with the following format: `Number of students in FIELD: 6. List: LIST_OF_FIRSTNAMES`
+- If the database is not available, it should return a status 500 and the error message `Cannot load the database`
 
-The second one is `getAllStudentsByMajor`:
+**8.4 Write the routes**
 
--   The method accepts `request` and `response` as argument
--   It should return a status 200
--   It uses a parameter that the user can pass to the browser `major`. The `major` can only be `CS` or `SWE`. If the user is passing another parameter, the server should return a 500 and the error `Major parameter must be CS or SWE`
--   It calls the function `readDatabase` from the `utils` file, and display in the page the list of first names for the students (ordered by appearance in the database file) in the specified field `List: LIST_OF_FIRSTNAMES_IN_THE_FIELD`
--   If the database is not available, it should return a status 500 and the error message `Cannot load the database`
+Inside the file full_server/routes/index.js:
 
-### 8.4 Write the routes
-Inside the file `full_server/routes/index.js`:
+- Link the route / to the AppController
+- Link the route /students and /students/:majorto the StudentsController
 
--   Link the route `/` to the `AppController`
--   Link the route `/students` and `/students/:major` to the `StudentsController`
+**8.5 Write the server reusing everything you created**
 
-### 8.5 Write the server reusing everything you created
-Inside the file named `full_server/server.js`, create a small Express server:
+Inside the file named full_server/server.js, create a small Express server:
 
--   It should use the routes defined in `full_server/routes/index.js`
--   It should use the port `1245`
+- It should use the routes defined in full_server/routes/index.js
+- It should use the port 1245
 
-### 8.6 Update `package.json` (if you are running it from outside the folder `full_server`)
-If you are starting node from outside of the folder `full_server`, you will have to update the command `dev` by: `nodemon --exec babel-node --presets babel-preset-env ./full_server/server.js ./database.csv`
+**8.6 Update package.json (if you are running it from outside the folder full_server)**
 
-**Warning:**
+If you are starting node from outside of the folder full_server, you will have to update the command dev by: nodemon --exec babel-node --presets babel-preset-env ./full_server/server.js ./database.csv
 
--   Don’t forget to export your express app at the end of `server.js` (`export default app;`)
--   The database filename is passed as argument of the `server.js` BUT, for testing purpose, you should retrieve this filename at the execution (when `getAllStudents` or `getAllStudentsByMajor` are called for example)
+Warning:
 
-Terminal 1:
+- Don’t forget to export your express app at the end of server.js (export default app;)
+- The database filename is passed as argument of the server.js BUT, for testing purpose, you should retrieve this filename at the execution (when getAllStudents or getAllStudentsByMajor are called for example)
+
+In terminal 1:
+
 ```
 bob@dylan:~$ npm run dev
 ...
 ```
+
 In terminal 2:
+
 ```
 bob@dylan:~$ curl localhost:1245 && echo ""
 Hello Holberton School!
-bob@dylan:~$ 
+bob@dylan:~$
 bob@dylan:~$ curl localhost:1245/students && echo ""
 This is the list of our students
 Number of students in CS: 6. List: Johann, Arielle, Jonathan, Emmanuel, Guillaume, Katie
 Number of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy
-bob@dylan:~$ 
+bob@dylan:~$
 bob@dylan:~$ curl localhost:1245/students/SWE && echo ""
 List: Guillaume, Joseph, Paul, Tommy
-bob@dylan:~$ 
+bob@dylan:~$
 bob@dylan:~$ curl localhost:1245/students/French -vvv && echo ""
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
@@ -605,21 +912,24 @@ bob@dylan:~$ curl localhost:1245/students/French -vvv && echo ""
 <
 * Connection #0 to host localhost left intact
 Major parameter must be CS or SWE
-bob@dylan:~$ 
+bob@dylan:~$
 ```
-If you want to add test to validate your integration, you will need to add this file: `.babelrc`
 
-*Click to show/hide file contents*
+If you want to add test to validate your integration, you will need to add this file: ``.babelrc`
+
+Click to show/hide file contents
+
 ```
 {
     "presets": [["env", {"exclude": ["transform-regenerator"]}]]
 }
 ```
 
+```
+npx nodemon --exec babel-node --presets babel-preset-env server.js database.csv
+```
+
 **Repo:**
-
--   GitHub repository: `alx-backend-javascript`
--   Directory: `0x05-Node_JS_basic`
--   File: `full_server/utils.js, full_server/controllers/AppController.js, full_server/controllers/StudentsController.js, full_server/routes/index.js, full_server/server.js`
-
- Done? Help Check your code Get a sandbox
+-   GitHub repository: `alx-backend-javascript`
+-   Directory: `0x05-Node_JS_basic`
+-   File: `full_server/utils.js, full_server/controllers/AppController.js, full_server/controllers/StudentsController.js, full_server/routes/index.js, full_server/server.js`
